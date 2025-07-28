@@ -1,0 +1,10 @@
+*.tfstate
+*.tfstate.*
+.terraform/
+crash.log
+
+*.env
+.aws/
+.DS_Store
+.Vscode/
+.idea/
