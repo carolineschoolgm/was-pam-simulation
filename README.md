@@ -1,11 +1,16 @@
-# 🔐 AWS Privileged Access Management (PAM) Simulation
-![Terraform Validation](https://github.com/your-username/aws-pam-simulation/actions/workflows/terraform.yml/badge.svg)
+![GitHub Repo stars](https://img.shields.io/github/stars/carolineschoolgm/aws-pam-simulation?style=social)
+![GitHub last commit](https://img.shields.io/github/last-commit/carolineschoolgm/aws-pam-simulation)
 
 
-## 📌 Overview
+
+#  AWS Privileged Access Management (PAM) Simulation
+![Terraform Validation](https://github.com/carolineschoolgm/aws-pam-simulation/actions/workflows/terraform.yml/badge.svg)
+
+
+##  Overview
 This project simulates a Just-in-Time (JIT) Privileged Access Management (PAM) system using native AWS services. It demonstrates how to securely grant and monitor temporary elevated access to sensitive resources — a key principle in Zero Trust and cloud security engineering.
 
-## 🎯 Objective
+##  Objective
 Implement and document a PAM workflow using:
 - IAM roles with limited, scoped permissions
 - IAM users without direct privileged access
@@ -13,26 +18,26 @@ Implement and document a PAM workflow using:
 - CloudTrail for audit logging
 - (Optional) Terraform or AWS CLI
 
-## 🧱 Architecture
+##  Architecture
 - **IAM Role**: `BackupAdminRole` – grants scoped S3 access
 - **IAM User**: `caroline_user` – no direct access to sensitive resources
 - **STS**: Enables `caroline_user` to assume the role temporarily
 - **CloudTrail**: Captures all AssumeRole activity
 
-## 🛠 Technologies Used
+##  Technologies Used
 - AWS IAM, STS, S3, CloudTrail
 - AWS CLI (optional)
 - Terraform (optional)
 - Markdown (for documentation)
 
-## 🔐 Security Concepts Demonstrated
+##  Security Concepts Demonstrated
 - Least Privilege Access
 - Role-Based Access Control (RBAC)
 - Temporary Elevation via STS
 - Auditing with CloudTrail
 - IAM Trust Policies
 
-## 🚀 How It Works
+## How It Works
 1. Create a private S3 bucket: `confidential-backups-bucket`
 2. Create IAM Role: `BackupAdminRole` with access only to that bucket
 3. Create IAM User: `caroline_user` with no direct S3 permissions
@@ -40,24 +45,24 @@ Implement and document a PAM workflow using:
 5. Use AWS CLI to assume the role temporarily
 6. Verify access and capture CloudTrail logs
 
-## 🧪 Sample AssumeRole Command
+##  Sample AssumeRole Command
 ```bash
 aws sts assume-role \
   --role-arn arn:aws:iam::<account_id>:role/BackupAdminRole \
   --role-session-name "CarolinePAMSession"
 ```
 
-## 📂 Screenshots to Include
+##  Screenshots to Include
 - IAM Role permission screenshot
 - Trust relationship policy view
 - IAM User policy with sts:AssumeRole
 - CloudTrail log showing `AssumeRole` event
 
-## 📘 What I Learned
+##  What I Learned
 - How to enforce PAM in AWS using native IAM
 - Temporary privilege elevation using STS
 - Monitoring elevated access with CloudTrail
 - How to document access policies clearly
 
-## 📄 License
+##  License
 MIT License
